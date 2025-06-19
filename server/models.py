@@ -23,6 +23,7 @@ class Bakery(db.Model, SerializerMixin):
     def __repr__(self):
         return f'<Bakery {self.name}>'
 
+
 class BakedGood(db.Model, SerializerMixin):
     __tablename__ = 'baked_goods'
 
@@ -30,7 +31,7 @@ class BakedGood(db.Model, SerializerMixin):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, unique=True)
-    price = db.Column(db.Integer)
+    price = db.Column(db.Float)
     created_at = db.Column(db.DateTime, server_default=db.func.now())
     updated_at = db.Column(db.DateTime, onupdate=db.func.now())
 
